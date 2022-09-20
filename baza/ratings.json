@@ -1,0 +1,89 @@
+[{
+  "_id": {
+    "$oid": "632a1f97ed0c94b341d6d361"
+  },
+  "idB": 5,
+  "username": [
+    "zika"
+  ],
+  "ocena": [
+    5
+  ],
+  "text": [
+    "new comment"
+  ],
+  "date": [
+    {
+      "$date": {
+        "$numberLong": "1663704983780"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632a1fb4ed0c94b341d6d373"
+  },
+  "idB": 6,
+  "username": [
+    "zika"
+  ],
+  "ocena": [
+    8
+  ],
+  "text": [
+    "new comment"
+  ],
+  "date": [
+    {
+      "$date": {
+        "$numberLong": "1663705012376"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632a23b1ed0c94b341d6d432"
+  },
+  "idB": 0,
+  "username": [
+    "mika"
+  ],
+  "ocena": [
+    10
+  ],
+  "text": [
+    "new comment"
+  ],
+  "date": [
+    {
+      "$date": {
+        "$numberLong": "1663706033116"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632a23d6ed0c94b341d6d44d"
+  },
+  "idB": 3,
+  "username": [
+    "mika"
+  ],
+  "ocena": [
+    5
+  ],
+  "text": [
+    "new comment"
+  ],
+  "date": [
+    {
+      "$date": {
+        "$numberLong": "1663706070178"
+      }
+    }
+  ],
+  "__v": 0
+}]

@@ -1,0 +1,103 @@
+[{
+  "_id": {
+    "$oid": "632a1f9ced0c94b341d6d36b"
+  },
+  "username": "zika",
+  "idB": [
+    5,
+    6,
+    5,
+    5,
+    5,
+    0,
+    1
+  ],
+  "datumzaduzivanja": [
+    {
+      "$date": {
+        "$numberLong": "1663704988627"
+      }
+    },
+    {
+      "$date": {
+        "$numberLong": "1663705015707"
+      }
+    },
+    {
+      "$date": {
+        "$numberLong": "1663705040857"
+      }
+    },
+    {
+      "$date": {
+        "$numberLong": "1663705153403"
+      }
+    },
+    {
+      "$date": {
+        "$numberLong": "1663705462576"
+      }
+    },
+    {
+      "$date": {
+        "$numberLong": "1663705476158"
+      }
+    },
+    {
+      "$date": {
+        "$numberLong": "1663705498182"
+      }
+    }
+  ],
+  "datumvracanja": [
+    null,
+    null,
+    {
+      "$date": {
+        "$numberLong": "1663705135448"
+      }
+    },
+    null,
+    null,
+    null,
+    null
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632a2386ed0c94b341d6d415"
+  },
+  "username": "mika",
+  "idB": [
+    0,
+    5,
+    3
+  ],
+  "datumzaduzivanja": [
+    {
+      "$date": {
+        "$numberLong": "1663705990839"
+      }
+    },
+    {
+      "$date": {
+        "$numberLong": "1663705999235"
+      }
+    },
+    {
+      "$date": {
+        "$numberLong": "1663706006122"
+      }
+    }
+  ],
+  "datumvracanja": [
+    null,
+    null,
+    {
+      "$date": {
+        "$numberLong": "1663706046030"
+      }
+    }
+  ],
+  "__v": 0
+}]
