@@ -1,0 +1,67 @@
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="menu">Menu</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Reader options
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="profile"  *ngIf="isRegistered" >Profile</a>
+            <a class="dropdown-item" routerLink="user"  *ngIf="isRegistered" >My homepage</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="search">Search</a>
+            <a class="dropdown-item" routerLink="borrowed"  *ngIf="isRegistered" >Borrowed books</a>
+            <a class="dropdown-item" routerLink="history"  *ngIf="isRegistered" >Borrowed books history</a>
+            
+          </div>
+        </li>
+        <li class="nav-item" *ngIf="isRegistered">
+          <a class="nav-link" href="change">Change password</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav" *ngIf="!isRegistered">
+      <li class="nav-item" >
+        <a class="nav-link" routerLink="login">Log in</a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" routerLink="register">Sing up</a>
+      </li>
+      </ul>
+      <ul class="navbar-nav" *ngIf="isRegistered">
+        <li class="nav-item" >
+          <a class="nav-link" (click)="logout()">Log out</a>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>
+
+<section class="gallery">
+    <div class="container ">
+        <div class="img-container" >
+            <img src="{{image}}" alt="image" id="preview" >
+            <div class="img-prev text-center">
+                <div class="img-slide active">
+                    <img src="{{image1}}" alt="image1" (click)="imageChanger(image1)" id="1">     
+                </div>
+                <div class="img-slide active">
+                    <img src="{{image2}}" alt="image2" (click)="imageChanger(image2)" id="2">
+                </div>
+                <div class="img-slide active">
+                    <img src="{{image3}}" alt="image3" (click)="imageChanger(image3)" id="3">
+                </div>
+            </div>   
+        </div> 
+    </div>
+</section>
+
+</body>

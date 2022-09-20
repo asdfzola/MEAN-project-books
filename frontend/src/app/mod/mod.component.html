@@ -1,0 +1,51 @@
+<h2 *ngIf="user.type>1"></h2>
+     <div *ngIf ="user.type==0 || user.type==1" class="justify-content-center">
+        <div class="col-md-6">
+          <table class="table table-dark" >
+              <thead>
+                <tr>
+                  <th scope="col">Image</th>
+                  <th scope="col">Title:</th>
+                  <th scope="col">Authors:</th>
+                  <th scope="col">Genre:</th>
+                  <th scope="col">Publisher:</th>
+                  <th scope="col">Publication:</th>
+                  <th scope="col">Language:</th>
+                  <th scope="col">Broj knjiga:</th>  
+                </tr>
+              </thead>
+              <tbody>
+                <tr >   
+                  <td>
+                    <input type="file" class="file-input" accept=".jpg,.png"
+                              (change)="onFileSelected($event)" #fileUpload>
+                  </td>              
+                  <td>
+                    <input size="10" type="text" placeholder="title" [(ngModel)]="name">
+                  </td>
+                  <td>
+                    <input size="10" type="text" placeholder="author"[(ngModel)]="author">
+                  </td>
+                  <td>
+                     
+                        <input size="10" type="text" placeholder="genre" [(ngModel)]="genre"> <br/> 
+                     
+                  </td>
+                  <td>
+                    <input size="10" type="text" placeholder="publisher" [(ngModel)]="publisher">
+                  </td>
+                  <td>
+                    <input size="5" type="text" placeholder="published" [(ngModel)]="publication">
+                  </td>
+                  <td>
+                    <input size="5" type="text" placeholder="language" [(ngModel)]="language">
+                  </td>
+                  
+                  <td>
+                    <input size="5" type="text" placeholder="number" [(ngModel)]="number">
+                  </td>
+                </tr>
+                <button type="button" class="btn btn-primary" (click)="addBook()">add book</button>
+              </tbody>
+              
+            </table >

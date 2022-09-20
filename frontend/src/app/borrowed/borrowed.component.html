@@ -1,0 +1,27 @@
+<body>
+<section *ngIf="!have">
+    <h1 style="font-family: Arial; " >Citalac nema trenutnih zaduzenja</h1>
+</section>
+<button type="button" (click)="home()" class="btn btn-primary">home page</button>
+<section class="mt-3" *ngIf="have">
+    <div class="container" >
+        <div class="row">
+        <div class="col-md-3" *ngFor="let b of borrowedBooks; let i = index">
+            <div class="card">
+                <img src="{{b.img}}">
+                <div class="card-body">
+                    <h5 class="card-title">Pozajmljena knjiga</h5>
+                    <p class="card-text">Title:{{b.name}}</p> 
+                    <p> Authors:{{b.author}}</p>
+                    <p *ngIf="rokovi[i]>0 || rokovi[i]==0">rok za vracanje: {{rokovi[i]}} dan/a</p>
+                    <p *ngIf="rokovi[i]<0">kasnite sa vracanjem:<span style="color:red"><b>{{-rokovi[i]}}</b></span> dan/a</p>
+                    <button type="button" (click)="book(b)" class="btn btn-primary">Idi na knjigu</button>
+                    <button type="button" class="btn btn-sm" (click)="razduzi(b.idB, i)">Razduzi</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+</section>
+</body>

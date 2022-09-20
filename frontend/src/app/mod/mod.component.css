@@ -1,0 +1,12 @@
+
+table {
+    border: 1px solid;
+  }
+
+
+img{
+    max-height:480px;
+    max-width:300px;
+    height:auto;
+    width:auto;
+}

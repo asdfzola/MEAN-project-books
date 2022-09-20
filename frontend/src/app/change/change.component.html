@@ -1,0 +1,48 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<body>
+<div class="container">
+  <div class="row centered-form">
+  <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Register</h3>
+       </div>
+       <div class="panel-body">
+        <form role="form" name="myForm" >
+          <div class="form-group">
+            <input [type]="visible ? 'text' : 'password'" name="password" id="password" class="form-control input-sm" placeholder="Old Password" [(ngModel)]="oldPassword" required>
+           <span style="color: red" id="message"></span>
+          </div>
+<div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">
+        <input [type]="visible ? 'text' : 'password'" name="password" id="newPassword" class="form-control input-sm" placeholder="New Password"
+       [(ngModel)]="newPassword" required>
+        <span id = "message1" style="color:red"> </span>
+        <div >
+          <input type="checkbox" (click)="showPassword()">Show Password
+        </div>
+      </div>
+     
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">
+        <input [type]="visible ? 'text' : 'password'" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm new Password" [(ngModel)]="cPassword" required>
+        <span style="color: red" id="message2"></span>
+        
+      </div>
+    </div>
+  </div>
+  
+  </form>
+  
+  <input type="submit" value="submit" class="btn btn-info btn-block" (click)="change()">
+  <input type="button" value="home page" class="btn btn-info btn-block" (click)="home()">
+  </div>
+</div>
+</div>
+</div>
+</div>
+</body>

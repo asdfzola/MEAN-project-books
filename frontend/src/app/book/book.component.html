@@ -1,0 +1,114 @@
+<body>
+  
+     <div class="row height align-items-center">
+      <img src="{{book.img}}">
+      
+      <div class="col-md-6">
+          
+          <table class="table table-dark" >
+              <thead>
+                <tr>
+                  <th scope="col">id:</th>
+                  <th scope="col">Title:</th>
+                  <th scope="col">Authors:</th>
+                  <th scope="col">Genre:</th>
+                  <th scope="col">Publisher:</th>
+                  <th scope="col">Publication:</th>
+                  <th scope="col">Language:</th>
+                  <th scope="col">Rating:</th> 
+                  <th scope="col">Broj knjiga:</th>  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngIf="!azuriraj">                 
+                  <td>{{book.idB}}</td>
+                  <td>{{book.name}}</td>
+                  <td>{{book.author}}</td>
+                  <td>
+                      <span *ngFor="let g of book.genre">{{g}} <br/> </span>  
+                  </td>
+                  <td>{{book.publisher}}</td>
+                  <td>{{book.publication}}</td>
+                  <td>{{book.language}}</td>
+                  <td>{{avg}}</td>
+                  <td>{{book.number}}</td>
+                  <td >
+                    <button type="button" class="btn btn-primary" (click)="borrow(book.idB)">zaduzi knjigu</button>
+                  </td>
+                </tr>
+                <tr *ngIf="mod && azuriraj">   
+                                
+                  <td>{{book.idB}}</td>
+                  <td>
+                    <input size="10" type="text" placeholder="{{book.name}}" [(ngModel)]="name">
+                  </td>
+                  <td>
+                    <input size="10" type="text" placeholder="{{book.author}}"[(ngModel)]="author">
+                  </td>
+                  <td>
+                      <span *ngFor="let g of book.genre; let i = index">
+                        <input size="10" type="text" placeholder="{{g}}" [(ngModel)]="genre[i]"> <br/> 
+                      </span>  
+                  </td>
+                  <td>
+                    <input size="10" type="text" placeholder="{{book.publisher}}" [(ngModel)]="publisher">
+                  </td>
+                  <td>
+                    <input size="5" type="text" placeholder="{{book.publication}}" [(ngModel)]="publication">
+                  </td>
+                  <td>
+                    <input size="5" type="text" placeholder="{{book.language}}" [(ngModel)]="language">
+                  </td>
+                  <td>{{avg}}</td>
+                  <td>
+                    <input size="2" type="text" placeholder="{{book.number}}" [(ngModel)]="number">
+                  </td>
+                  <td *ngIf="!azuriraj" >
+                    <button type="button" class="btn btn-primary" (click)="borrow(book.idB)">zaduzi knjigu</button>
+                  </td>
+                </tr>
+                
+              </tbody>
+              
+            </table >
+            <span *ngIf="azuriraj">Choose photo:</span> <br/>
+            <input *ngIf="azuriraj" type="file" class="file-input" accept=".jpg,.png" (change)="onFileSelected($event)" #fileUpload>
+            <br/>
+            <button *ngIf="mod && !azuriraj" type="button" class="btn btn-primary" (click)="azur()">izmeni knjigu</button>
+            <button *ngIf="mod && azuriraj" type="button" class="btn btn-primary" (click)="update()">azuriraj</button>
+            <br/>
+            <button *ngIf="mod" type="button" class="btn btn-success" (click)="dodaj()">dodaj knjigu</button>
+            <br/>
+            <span style="color: red">{{message}} {{message4}} {{message5}}</span>
+
+            <h2>Ratings and comments:</h2>
+              <span style="color: red"> {{message1}} </span>
+              <table *ngIf="postoji" class="table">
+                <tr>
+                <th>username: </th>
+                 <th>ocena: </th> 
+                 <th> tekst:</th>
+                 <th>datum i vreme:</th>
+                </tr>
+                <tr *ngFor="let r of rating?.username; let i = index" >
+                 <td> {{r}} </td> 
+                 <td>{{rating.ocena[i]}}</td>
+                 <td> {{rating.text[i]}} </td>
+                 <td> {{rating.date[i] | date:'yyyy-MM-dd hh-mm-ss'}}</td>
+                </tr>
+              </table>
+            <br/>
+              komentar:
+              <input type="text" size="90" maxlength="1000" [(ngModel)]="comment">
+              <br/>
+              ocena:
+              <input type='number' size="5" max="10" min="0" [(ngModel)]="ocena">
+              <button type="button" class="btn btn-primary" (click)="addComment()">submit</button>
+              <br/>
+              <span style="color: red">{{message2}}</span>
+              <span style="color: red">{{message3}}</span>
+        </div>
+      </div> 
+    
+  
+  </body>

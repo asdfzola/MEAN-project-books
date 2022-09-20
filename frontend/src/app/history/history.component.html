@@ -1,0 +1,39 @@
+
+<body>
+    <div class="container" >
+      <div class="row height d-flex justify-content-center align-items-center">
+        <div class="col-md-6">
+          <table class="table border" id="myTable" >
+              <thead>
+                <tr>
+                  <th scope="col" (click)="sortByName()">Title:</th>
+                  <th scope="col" (click)="sortByAuthors()">Authors:</th>
+                  <th scope="col" (click)="sortByDate1()">Datum zaduzivanja:</th>
+                  <th scope="col" (click)="sortByDate()">Datum vracanja:</th> 
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let b of books; let i = index">
+                  <td>{{b.name}}</td>
+                  <td>{{b.author}}</td>
+                  <td>{{b.datumzaduzivanja | date:'yyyy-MM-dd'}}</td>
+                  <td>{{b.datumvracanja | date:'yyyy-MM-dd'}}</td>
+                 <!-- <td>
+                    {{datumzaduzivanja[i] | date:'yyyy-MM-dd'}}
+                  </td>
+                  <td>{{datumvracanja[i] | date:'yyyy-MM-dd'}}</td> -->
+                  <button class="btn btn" (click)="book(b)">idi na detalje</button>
+                </tr>
+              </tbody>
+            </table>
+            <button type="button" (click)="home()" class="btn btn-primary">home page</button>
+        </div>
+        
+      </div> 
+      
+    </div>
+    
+    <div>
+  </div>
+  </body>
+ 

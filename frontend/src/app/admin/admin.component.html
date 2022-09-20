@@ -1,0 +1,59 @@
+<h2 *ngIf="tip!=0">SAMO ZA ADMINA</h2>
+<section *ngIf="tip==0">
+<div style="margin-left: 10%;" class="panel">
+
+    <button  type="button"class='btn btn-primary' (click)="addBook()">dodaj novu knjigu</button>
+    <button  type="button"class='btn btn-primary' (click)="addUser()">dodaj novog korisnika</button>
+   
+    
+</div>
+
+<h2 >Korisnici:</h2>
+<table class="table">
+    <tr>
+        <th>username</th>
+
+    </tr>
+    <tr *ngFor="let u of users">
+        <td>{{u.username}}</td>
+        <td >
+            <button *ngIf="!u.approved" type="button" class="btn btn-primary" (click)="approve(u.username)">approve</button>
+        </td>
+        <td >
+            <button *ngIf="!u.approved" type ="button" class="btn btn-primary" (click)="decline(u.username)">decline</button>
+        </td>
+        <td>
+            <button type="button" class="btn btn-primary" (click)="delete(u.username)">delete</button>
+        </td>
+        <td>
+            <button type="button" class="btn btn-primary" (click)="update(u.username)">update</button>
+        </td>
+    </tr>
+</table>
+<h2 >Knjige:</h2>
+<table class="table" >
+    <tr>
+        <th>idB:</th>
+        <th>Title:</th>
+    </tr>
+    <tr *ngFor="let b of books">
+        <td>{{b.idB}}</td>
+        <td>{{b.name}}</td>
+        <td>
+            <button type="button" class="btn btn-primary" (click)="deleteBook(b.idB)">delete</button>
+        </td>
+        <td>
+            <button type="button" class="btn btn-primary" (click)="updatebook(b)">update</button>
+        </td>
+        <td>
+            unesi rok za vracanje knjige:
+            <input style="width: 50px;" type="number" placeholder="14" min="0" [(ngModel)]="number">
+            <button  type="button"class='btn btn-primary' (click)="addRok(b.idB)">submit</button>
+        </td>
+    </tr>
+</table>
+
+</section>
+<button type="button"class='btn btn-primary' (click)="logout()">Logout</button>
+<button type="button"class='btn btn-primary' (click)="home()">Home page</button>
+

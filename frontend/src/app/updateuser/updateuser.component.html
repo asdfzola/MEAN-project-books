@@ -1,0 +1,57 @@
+<table class="table">
+    <tr>
+        <th>image:</th>
+        <th>username:</th>
+        <th>password:</th>
+        <th>firstname:</th>
+        <th>lastname:</th>
+        <th>email:</th>
+        <th>phone:</th>
+        <th>address:</th>
+        <th>type:</th>
+    </tr>
+    <tr *ngFor="let u of users; let i = index">
+        <td *ngIf="u.username==username1">
+            <img src="{{u.img}}">
+            <input type="file" class="file-input" accept=".jpg,.png"
+              (change)="onFileSelected($event)" #fileUpload>
+        </td>
+        <td *ngIf="u.username==username1">
+            <input size='10' type="text" placeholder="{{u.username}}" [(ngModel)]="username">
+            old:{{u.username}}
+            <span style="color: red">{{message}}</span>
+        </td>
+        <td *ngIf="u.username==username1">
+            <input size='10' type="password" placeholder="{{u.password}}" [(ngModel)]="password">
+            old:{{u.password}}
+        </td>
+        <td *ngIf="u.username==username1">
+            <input size='10' type="text" placeholder="{{u.firstname}}" [(ngModel)]="firstname">
+            old:{{u.firstname}}
+        </td>
+        <td *ngIf="u.username==username1">
+            <input size='10' type="text" placeholder="{{u.lastname}}" [(ngModel)]="lastname">
+            old:{{u.lastname}}
+        </td>
+        <td *ngIf="u.username==username1">
+            <input type="text" placeholder="{{u.email}}" [(ngModel)]="email">
+            old:{{u.email}}
+            <span style="color: red">{{message2}}</span>
+        </td>
+        <td *ngIf="u.username==username1">
+            <input size='10' type="text" placeholder="{{u.phone}}" [(ngModel)]="phone">
+            old:{{u.phone}}
+        </td>
+        <td *ngIf="u.username==username1">
+            <input type="text" placeholder="{{u.address}}" [(ngModel)]="address">
+            old:{{u.address}}
+        </td>
+        <td *ngIf="u.username==username1">
+            <input type="number" max="2" min="0" placeholder="{{u.type}}" [(ngModel)]="type">
+            0=admin  1=mod 2=normal
+        </td>
+        
+    </tr>
+
+</table>
+<button class="btn btn-primary" (click)="update()">submit</button>

@@ -1,0 +1,17 @@
+<body>
+<span *ngIf="isRegistered">
+    <img *ngIf="user.img!=null" src="{{user.img}}" (click)="profile()">
+    <img *ngIf="user.img==null" src="../assets/default.png" (click)="profile()">
+    <div class="center">
+       
+        
+        <button type='button' class="btn btn-primary"  (click)="logout()">Logout</button>
+        <button type="button" class="btn btn-primary"  (click)="back()">Back</button>
+    </div>
+
+</span>
+<span class="position" *ngIf="!isRegistered">
+    <app-login ></app-login>
+    <app-register ></app-register>
+</span>
+</body>
